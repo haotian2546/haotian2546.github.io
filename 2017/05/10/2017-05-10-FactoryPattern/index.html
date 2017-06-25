@@ -15,17 +15,19 @@
 
 
 
-<meta name="description" content="归零，重新开始！">
-<meta name="keywords" content="小文艺">
+<meta name="description" content="工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。">
+<meta name="keywords" content="工厂模式,JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重新起航">
-<meta property="og:url" content="http://www.kingmo.wang/2017/04/19/2017-04-19-restart/index.html">
+<meta property="og:title" content="工厂模式">
+<meta property="og:url" content="http://www.kingmo.wang/2017/05/10/2017-05-10-FactoryPattern/index.html">
 <meta property="og:site_name" content="KingMo">
-<meta property="og:description" content="归零，重新开始！">
-<meta property="og:updated_time" content="2017-06-25T11:54:09.308Z">
+<meta property="og:description" content="工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。">
+<meta property="og:image" content="http://www.kingmo.wang/img/factory_pattern_uml_diagram.jpg">
+<meta property="og:updated_time" content="2017-06-25T11:57:21.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重新起航">
-<meta name="twitter:description" content="归零，重新开始！">
+<meta name="twitter:title" content="工厂模式">
+<meta name="twitter:description" content="工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。">
+<meta name="twitter:image" content="http://www.kingmo.wang/img/factory_pattern_uml_diagram.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>重新起航 | KingMo</title>
+<title>工厂模式 | KingMo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -265,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2017-04-19-restart" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2017-05-10-FactoryPattern" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/19/2017-04-19-restart/" class="article-date">
-      <time datetime="2017-04-19T08:46:00.000Z" itemprop="datePublished">2017-04-19</time>
+      <a href="/2017/05/10/2017-05-10-FactoryPattern/" class="article-date">
+      <time datetime="2017-05-10T08:07:00.000Z" itemprop="datePublished">2017-05-10</time>
 </a>
 
 
@@ -284,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      重新起航
+      工厂模式
     </h1>
   
 
@@ -293,13 +295,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/书生碎语/">书生碎语</a>
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小文艺/">小文艺</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工厂模式/">工厂模式</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -309,7 +311,46 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>风雨如晦，归零，万里晴空，重新开始！</p>
+        <a id="more"></a>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><ul>
+<li>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</li>
+<li>在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</li>
+</ul>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li><strong>意图</strong>：定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。</li>
+<li><strong>主要解决</strong>：主要解决接口选择的问题。</li>
+<li><strong>何时使用</strong>：我们明确地计划不同条件下创建不同实例时。</li>
+<li><strong>如何解决</strong>：让其子类实现工厂接口，返回的也是一个抽象的产品。</li>
+<li><strong>关键代码</strong>：创建过程在其子类执行。</li>
+<li><strong>应用实例</strong>： <ul>
+<li>1、您需要一辆汽车，可以直接从工厂里面提货，而不用去管这辆汽车是怎么做出来的，以及这个汽车里面的具体实现。 </li>
+<li>2、Hibernate 换数据库只需换方言和驱动就可以。</li>
+</ul>
+</li>
+<li><strong>优点</strong>： <ul>
+<li>1、一个调用者想创建一个对象，只要知道其名称就可以了。 </li>
+<li>2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。 </li>
+<li>3、屏蔽产品的具体实现，调用者只关心产品的接口。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。这并不是什么好事。</li>
+<li><strong>使用场景</strong>： <ul>
+<li>1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。 </li>
+<li>2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。 </li>
+<li>3、设计一个连接服务器的框架，需要三个协议，”POP3”、”IMAP”、”HTTP”，可以把这三个作为产品类，共同实现一个接口。</li>
+</ul>
+</li>
+<li><strong>注意事项</strong>：作为一种创建类模式，在任何需要生成复杂对象的地方，都可以使用工厂方法模式。有一点需要注意的地方就是复杂对象适合使用工厂模式，而简单对象，特别是只需要通过 new 就可以完成创建的对象，无需使用工厂模式。如果使用工厂模式，就需要引入一个工厂类，会增加系统的复杂度。</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们将创建一个 Shape 接口和实现 Shape 接口的实体类。下一步是定义工厂类 ShapeFactory。<br>FactoryPatternDemo，我们的演示类使用 ShapeFactory 来获取 Shape 对象。它将向 ShapeFactory 传递信息（CIRCLE / RECTANGLE / SQUARE），以便获取它所需对象的类型。</p>
+<p><img src="/img/factory_pattern_uml_diagram.jpg" alt="FactoryPatternDemo"></p>
+<h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建一个接口<br>Shape.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public interface Shape &#123;</div><div class="line">   void draw();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>创建实现接口的实体类。<br>Rectangle.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Rectangle implements Shape &#123;</div><div class="line"></div><div class="line">   @Override</div><div class="line">   public void draw() &#123;</div><div class="line">      System.out.println(&quot;Inside Rectangle::draw() method.&quot;);</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤 3"></a>步骤 3</h3><p>创建一个工厂，生成基于给定信息的实体类的对象。<br>ShaeFactory.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class ShapeFactory &#123;</div><div class="line">	</div><div class="line">   //使用 getShape 方法获取形状类型的对象</div><div class="line">   public Shape getShape(String shapeType)&#123;</div><div class="line">      if(shapeType == null)&#123;</div><div class="line">         return null;</div><div class="line">      &#125;		</div><div class="line">      if(shapeType.equalsIgnoreCase(&quot;CIRCLE&quot;))&#123;</div><div class="line">         return new Circle();</div><div class="line">      &#125; else if(shapeType.equalsIgnoreCase(&quot;RECTANGLE&quot;))&#123;</div><div class="line">         return new Rectangle();</div><div class="line">      &#125; else if(shapeType.equalsIgnoreCase(&quot;SQUARE&quot;))&#123;</div><div class="line">         return new Square();</div><div class="line">      &#125;</div><div class="line">      return null;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="步骤4"><a href="#步骤4" class="headerlink" title="步骤4"></a>步骤4</h3><p>使用该工厂，通过传递类信息来获取实体类的对象<br>FactoryPatternDemo.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class FactoryPatternDemo &#123;</div><div class="line">   public static void main(String[] args) &#123;</div><div class="line">      ShapeFactory shapeFactory = new ShapeFactory();</div><div class="line">      //获取 Circle 的对象，并调用它的 draw 方法</div><div class="line">      Shape shape1 = shapeFactory.getShape(&quot;CIRCLE&quot;);</div><div class="line">      //调用 Circle 的 draw 方法</div><div class="line">      shape1.draw();</div><div class="line">      //获取 Rectangle 的对象，并调用它的 draw 方法</div><div class="line">      Shape shape2 = shapeFactory.getShape(&quot;RECTANGLE&quot;);</div><div class="line">      //调用 Rectangle 的 draw 方法</div><div class="line">      shape2.draw();</div><div class="line">      //获取 Square 的对象，并调用它的 draw 方法</div><div class="line">      Shape shape3 = shapeFactory.getShape(&quot;SQUARE&quot;);</div><div class="line">      //调用 Square 的 draw 方法</div><div class="line">      shape3.draw();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="步骤-5"><a href="#步骤-5" class="headerlink" title="步骤 5"></a>步骤 5</h3><p>验证输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Inside Circle::draw() method.</div><div class="line">Inside Rectangle::draw() method.</div><div class="line">Inside Square::draw() method.</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -318,13 +359,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/19/2017-04-19-restart/">重新起航</a></p>
+        <p><span>本文标题:</span><a href="/2017/05/10/2017-05-10-FactoryPattern/">工厂模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">KingMo</a></p>
-        <p><span>发布时间:</span>2017-04-19, 16:46:00</p>
-        <p><span>最后更新:</span>2017-06-25, 19:54:09</p>
+        <p><span>发布时间:</span>2017-05-10, 16:07:00</p>
+        <p><span>最后更新:</span>2017-06-25, 19:57:21</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/19/2017-04-19-restart/" title="重新起航">http://www.kingmo.wang/2017/04/19/2017-04-19-restart/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.kingmo.wang/2017/04/19/2017-04-19-restart/　　作者: KingMo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/10/2017-05-10-FactoryPattern/" title="工厂模式">http://www.kingmo.wang/2017/05/10/2017-05-10-FactoryPattern/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.kingmo.wang/2017/05/10/2017-05-10-FactoryPattern/　　作者: KingMo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -336,10 +377,16 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/04/19/2017-04-19-restart/">
+                    重新起航
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/05/10/2017-05-10-FactoryPattern/">
-                    工厂模式
+                <a href="/2017/05/15/2017-05-15-AbstractFactoryPattern/">
+                    抽象工厂模式
                 </a>
             </div>
         
@@ -351,7 +398,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工厂模式"><span class="toc-number">1.</span> <span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">2.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-number">3.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-1"><span class="toc-number">3.1.</span> <span class="toc-text">步骤 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-2"><span class="toc-number">3.2.</span> <span class="toc-text">步骤 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-3"><span class="toc-number">3.3.</span> <span class="toc-text">步骤 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤4"><span class="toc-number">3.4.</span> <span class="toc-text">步骤4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤-5"><span class="toc-number">3.5.</span> <span class="toc-text">步骤 5</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -387,7 +434,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"重新起航　| KingMo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"工厂模式　| KingMo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -407,13 +454,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/04/19/2017-04-19-restart/" title="上一篇: 重新起航">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/05/10/2017-05-10-FactoryPattern/" title="下一篇: 工厂模式">
+            <a href="/2017/05/15/2017-05-15-AbstractFactoryPattern/" title="下一篇: 抽象工厂模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
